@@ -1,6 +1,6 @@
-color-hexadecimal
+Hexadecimal Color
 ===
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][codecov-image]][codecov-url] [![Dependencies][dependencies-image]][dependencies-url]
 
 > Validates if a value is a hexadecimal color.
 
@@ -17,12 +17,50 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 ## Usage
 
 ``` javascript
-var foo = require( 'validate.io-color-hexadecimal' );
+var isHexColor = require( 'validate.io-color-hexadecimal' );
 ```
 
-#### foo( value )
+#### isHexColor( value[, mode] )
 
-What does this function do?
+Validates if a value is a hexadecimal color.
+
+``` javascript
+var bool = isHexColor( 'ffffff' );
+// returns true
+```
+
+To validate for shorthand, full, or either shorthand or full hexadecimal colors, set the `mode` option.
+
+*	__full__: (*default*) validate for a 6-digit hexadecimal color.
+*	__shorthand__: validate for a shorthand (3-digit) hexadecimal color.
+*	__either__: validate for either shorthand or full length hexadecimal colors.
+
+``` javascript
+var bool;
+
+// Full length colors...
+bool = isHexColor( 'ffffff', 'full' );
+// returns true
+
+bool = isHexColor( 'fff', 'full' );
+// returns false
+
+
+// Shorthand colors...
+bool = isHexColor( 'ffffff', 'shorthand' );
+// returns false
+
+bool = isHexColor( 'fff', 'shorthand' );
+// returns true
+
+
+// Either shorthand or full length colors...
+bool = isHexColor( 'ffffff', 'either' );
+// returns true
+
+bool = isHexColor( 'fff', 'either' );
+// returns true
+```
 
 
 ## Examples
@@ -83,8 +121,8 @@ Copyright &copy; 2015. Athan Reines.
 [travis-image]: http://img.shields.io/travis/validate-io/color-hexadecimal/master.svg
 [travis-url]: https://travis-ci.org/validate-io/color-hexadecimal
 
-[coveralls-image]: https://img.shields.io/coveralls/validate-io/color-hexadecimal/master.svg
-[coveralls-url]: https://coveralls.io/r/validate-io/color-hexadecimal?branch=master
+[codecov-image]: https://img.shields.io/codecov/c/github/validate-io/color-hexadecimal/master.svg
+[codecov-url]: https://codecov.io/github/validate-io/color-hexadecimal?branch=master
 
 [dependencies-image]: http://img.shields.io/david/validate-io/color-hexadecimal.svg
 [dependencies-url]: https://david-dm.org/validate-io/color-hexadecimal
