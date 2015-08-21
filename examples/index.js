@@ -1,36 +1,36 @@
 'use strict';
 
-var isColor = require( './../lib' );
+var isHexColor = require( './../lib' );
 
-console.log( isColor( 'ffffff' ) );
+console.log( isHexColor( 'ffffff' ) );
 // returns true
 
-console.log( isColor( '000000' ) );
+console.log( isHexColor( '000000' ) );
 // returns true
 
-console.log( isColor( 'e0e0e0' ) );
+console.log( isHexColor( 'e0e0e0' ) );
 // returns true
 
-console.log( isColor( 'E0F44A' ) );
+console.log( isHexColor( 'E0F44A' ) );
 // returns true
 
-console.log( isColor( 'E0f44B' ) );
+console.log( isHexColor( 'E0f44B' ) );
 // returns true
 
-console.log( isColor( 'FFF' ) );
+console.log( isHexColor( 'FFF' ) );
 // returns false
 
-console.log( isColor( 'FFFFFF', 'shorthand' ) );
+console.log( isHexColor( 'FFFFFF', 'shorthand' ) );
 // returns false
 
-console.log( isColor( 'FFF', 'shorthand' ) );
+console.log( isHexColor( 'FFF', 'shorthand' ) );
 // returns true
 
-console.log( isColor( 'FFFFFF', 'either' ) );
+console.log( isHexColor( 'FFFFFF', 'either' ) );
 // returns true
 
-console.log( isColor( 'fff', 'either' ) );
+console.log( isHexColor( 'fff', 'either' ) );
 // returns true
 
-console.log( isColor( '#ffffff' ) );
+console.log( isHexColor( '#ffffff' ) );
 // returns false
