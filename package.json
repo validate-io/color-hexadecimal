@@ -1,6 +1,6 @@
 {
   "name": "validate.io-color-hexadecimal",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Validates if a value is a hexadecimal color.",
   "author": {
     "name": "Athan Reines",
